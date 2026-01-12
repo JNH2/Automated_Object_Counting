@@ -2,10 +2,15 @@
 
 We tested the Automated Object Counting pipeline on several sample images using YOLOv5l pretrained model.  
 
-**Example: Sheep Detection**
+Example: Sheep Detection**
 - Input Image: `example_images/1061.jpg`
 - Target Class: Sheep (class_id=18)
 - Confidence Threshold: 0.5
 - Output: 4 sheep detected in the image
 
+
 The pipeline applies a confidence filter and outputs the total number of detected objects per image. All detection results are printed in the terminal and can optionally be saved to annotated images in the `results/` folder.
+
+
+- Sheep detection: example_images/1061.jpg → 4 sheep detected
+- Car detection: example_images/cars.jpg → 7 cars detected
