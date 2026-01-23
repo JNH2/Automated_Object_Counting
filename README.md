@@ -19,3 +19,44 @@ Pipeline Architecture
 5. Counting
    Aggregate valid detections per image
   Output per-image and dataset-level counts
+
+
+Counting Error Analysis
+To evaluate counting performance, we define:
+Counting Error = | Predicted Count − Ground Truth Count |
+
+Evaluation metrics:
+MAE (Mean Absolute Error)
+RMSE (Root Mean Squared Error)
+
+Observed error sources:
+False positives due to background clutter
+Missed detections under occlusion
+Domain shift between custom datasets and COCO
+Sensitivity to confidence threshold selection
+
+Dataset
+Custom image dataset with class-level annotations
+Optional evaluation on FSC147-style counting benchmarks
+Dataset curation emphasizes data quality and bias awareness
+
+Ethical Considerations
+Object counting systems may be repurposed for surveillance
+Person detection raises privacy concerns
+
+Mitigations:
+Avoid storing raw images
+Apply anonymization if people appear
+Be transparent about system limitations
+
+Tech Stack
+Python
+PyTorch
+YOLOv5
+OpenCV
+NumPy
+
+Future Work
+Integrate IoU-based loss functions for improved localization
+Extend to video-based counting with temporal consistency
+Compare detection-based counting with density-based methods
